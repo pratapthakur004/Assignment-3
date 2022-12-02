@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Login User</title>
+</head>
+<body style="background-color: gray;">
+    {{> header}}
+    <br>
+    <div class="container border-dark col-md-4" style="background-color: yellowgreen; margin-top:150px"><br>
+    {{!-- alert messages --}}
+    {{!-- error alert message --}}
+        {{#if errMsg}}
+        <div class="alert alert-danger">
+            <p>{{errMsg}}</p>
+        </div>
+        {{/if}}
+    {{!-- success alert message --}}
+        {{#if succMsg}}
+        <div class="alert alert-success">
+            <p>{{succMsg}}</p>
+        </div>
+        {{/if}}
+
+        <center><h4>LOGIN FORM</h4></center>
+    {{!-- login form --}}
+        <form method="post" action="/user/postLoginData">
+
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" name="password">
+            </div><br>
+        {{!-- submit button --}}
+            <input type="submit" class="form-control" style="background-color: yellowgreens;"><br>
+        </form>
+    </div>
+</body>
+</html>

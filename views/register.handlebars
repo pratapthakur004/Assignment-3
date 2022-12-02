@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> header}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body style="background-color: gray;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <br>
+    <div class="container border-dark col-md-4" style="background-color: white;">
+        {{#if errMsg}}
+        <div class="alert alert-danger">
+            <p>{{errMsg}}</p>
+        </div>
+        {{/if}}
+        {{#if success}}
+        <div class="alert alert-success">
+            <p>{{succMsg}}</p>
+        </div>
+        {{/if}}
+            <center><h4>Registration Form</h4></center>
+        <form method="post" action="/user/postRegistrationData">
+            <div class="form-group">
+                <label>Full Name:</label>
+                <input type="text" class="form-control" name="name">
+                {{#if nameerr}}
+                    <p class="alert alert-danger">{{nameerr}}</p>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email" class="form-control">
+                {{#if emailerr}}
+                    <p class="alert alert-danger">{{emailerr}}</p>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="password" class="form-control">
+                {{#if passworderr}}
+                    <p class="alert alert-danger">{{passworderr}}</p>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <label>Age :</label>
+                <input type="number" name="age" class="form-control">
+                {{#if ageerr}}
+                    <p class="alert alert-danger">{{ageerr}}</p>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <label>City:</label>
+                <input type="text" name="city" class="form-control">
+                {{#if cityerr}}
+                    <p class="alert alert-danger">{{cityerr}}</p>
+                {{/if}}                
+            </div>
+            <br>
+                <input type="submit" class="form-control" style="background-color: yellowgreen;"><br>
+            
+        </form>
+    </div>
+</body>
+</html>
